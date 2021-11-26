@@ -9,33 +9,67 @@
 const teams = 
 [
     {
-        name:'Napoli',
-        score: 0,
-        fouls_suffered: 0,  
-    }
+        nome: 'Napoli',
+        punti: 0,
+        falli_subiti: 0  
+    },
+
     {
-        name:'Milan',
-        score: 0,
-        fouls_suffered: 0,  
-    }
+        nome: 'Milan',
+        punti: 0,
+        falli_subiti: 0   
+    },
+
     {
-        name:'Inter',
-        score: 0,
-        fouls_suffered: 0,  
-    }
+        nome: 'Inter',
+        punti: 0,
+        falli_subiti: 0   
+    },
     {
-        name:'Atalanta',
-        score: 0,
-        fouls_suffered: 0,  
-    }
+        nome: 'Atalanta',
+        punti: 0,
+        falli_subiti: 0   
+    },
     {
-        name:'Roma',
-        score: 0,
-        fouls_suffered: 0,  
-    }
+        nome: 'Roma',
+        punti: 0,
+        falli_subiti: 0  
+    },
     {
-        name:'Lazio',
-        score: 0,
-        fouls_suffered: 0,  
+        nome: 'Lazio',
+        punti: 0,
+        falli_subiti: 0  
     }
 ]
+
+
+const newTeam = [];
+
+for (let i = 0; i < teams.length; i++){
+    const thisTeam = teams[i];
+    // Genero numeri random per punti e falli subiti
+    thisTeam.punti = getRndInteger(0, 32);
+    thisTeam.falli_subiti = getRndInteger(0, 50);
+    //console.log(thisTeam);
+
+    // Con la destrutturazione creo un nuovo array con nomi e falli subiti
+    const {nome, falli_subiti} = thisTeam;
+    
+    const teamValues = {
+        nome,
+        falli_subiti
+    }
+    newTeam.push(teamValues);
+}
+
+// Stampo in console i risultati
+for(let i = 0; i < newTeam.length; i++) {
+    thisNewTeam = newTeam[i];
+    console.log(thisNewTeam.nome + ' ha subito: ' + thisNewTeam.falli_subiti + ' falli');
+}
+
+// Funzione standard per generare numero casuale
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
