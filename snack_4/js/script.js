@@ -31,13 +31,15 @@ const targheStudenti  = students.map((element, index, array) => {
     return nome;
 });
 
-  console.log(targheStudenti);
+   console.log(targheStudenti);
 
 // 2
 const bestStudents = students.filter((element, index, array) => {
-    const voti = element.grades;
+    // const voti = element.grades;
         
-    return voti > 70;
+    // return voti > 70;
+
+    return element.grades > 70
 });
 
     console.log(bestStudents);
@@ -45,9 +47,12 @@ const bestStudents = students.filter((element, index, array) => {
 
 // 3
 const highGradesAndHighId = students.filter((element, index, array) => {
-    const voti = element.grades;
-    const idNumber = element.id;  
-    return voti > 70 && idNumber > 120;
+    // const voti = element.grades;
+    // const idNumber = element.id;  
+    
+    // return voti > 70 && idNumber > 120;
+
+    return element.grades > 70 && element.id > 120;
 });
 
     console.log(highGradesAndHighId)
